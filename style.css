@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+   overflow-x: hidden;
+}
+.header{
+    width: 100%;
+    height: 15vh;
+    background-color: aquamarine;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+.header .logo{
+    height: 3.5rem;
+    border-radius: .6rem;
+    cursor: pointer;
+    transition: all 0.9s ease;
+}
+.header .logo:hover{
+    transform: scale(1.2);
+}
+.navbar .navlist{
+    display: flex;
+    justify-content:space-between; 
+    align-items: center; 
+    gap: 4rem;
+    list-style: none;
+    font-size: 2rem
+
+
+}
+.navlink{
+    text-decoration: none;
+    color: rgb(105, 101, 101);  
+   
+}
+.navlink:hover{
+    color:rgb(109, 109, 234);  
+}
+   
+
+.heroSection,.serviceSection{
+    height: 60vh;
+    background-color: rgb(209, 213, 218);
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.heroSection{
+    height: 60vh;
+    background-color: rgb(209, 213, 218);
+}
+.serviceSection{
+    height: 40vh;
+    background-color:rgb(154, 154, 130);
+}
+.mobile-nav-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.mobile-navbar-btn{
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+.mobile-nav-icon[name="close-outline"]{
+    display: none;
+}
+@media (max-width:768px) { 
+    
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 999;
+        border: 1px solid black;
+    }
+    .header{
+        padding: 0 1rem;
+        position: relative;
+    }
+    .navbar{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: aqua;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+        opacity: 0;
+        visibility: hidden  ;
+        
+    }
+    .navlist{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
+        display: none;
+    }
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]{
+        display: block;
+    }
+    
+}
+
